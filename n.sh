@@ -1,15 +1,19 @@
 #!/bin/bash
 
-NOTES=~/notes
+NOTES=~/.n/notes
 TIME=`printf "[%(%Y/%m/%d %r)T]"`
 case "$1" in
     p)
-        cat $NOTES
+        less +G $NOTES
         ;;
 
     c)
-        rm $NOTES
+        rm -i $NOTES
         touch $NOTES
+        ;;
+
+    e)
+        vim + $NOTES
         ;;
 
     t)
